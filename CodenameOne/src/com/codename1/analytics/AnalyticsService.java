@@ -33,7 +33,7 @@ import com.codename1.ui.events.ActionListener;
  * <p>The analytics service allows an application to report its usage, it is seamlessly
  * invoked by GUI builder applications if analytics is enabled for your application but can
  * work just as well for handcoded apps!</p>
- * <p>To enable analytics just use the {@link #init(java.lang.String, java.lang.String)} 
+ * <p>To enable analytics just use the {@link #initGoogleAnalytics(java.lang.String, java.lang.String)}
  * method of the analytics service. For most typical usage you should also invoke the
  * {@link #setAppsMode(boolean)} method with {@code true}. If you are 
  * not using the GUI builder invoke the visit method whenever you would like to log a 
@@ -129,7 +129,7 @@ public class AnalyticsService {
      * @param domain a domain to represent your application, commonly you should use your package name as a URL (e.g. 
      * com.mycompany.myapp should become: myapp.mycompany.com)
      */
-    public static void init(String agent, String domain) {
+    public static void initGoogleAnalytics(String agent, String domain) {
         if(instance == null) {
             instance = new AnalyticsService();
         }
@@ -141,7 +141,7 @@ public class AnalyticsService {
      * Allows installing an analytics service other than the default
      * @param i the analytics service implementation.
      */
-    public static void init(AnalyticsService i) {
+    public static void initOtherAnalyticsService(AnalyticsService i) {
         instance = i;
     }
     
